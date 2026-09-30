@@ -163,20 +163,20 @@ export default function Hero() {
             className="font-normal mb-4"
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(42px, 11vw, 56px)',
+              fontSize: 'clamp(32px, 8.6vw, 46px)',
               lineHeight: 1.05,
               letterSpacing: '-0.025em',
               color: '#171716',
             }}
           >
-            Ideas are cheap.
+            We build software.
             <br />
+            For{' '}
             <em className="italic" style={{ color: '#68655E' }}>
-              Execution
-            </em>{' '}
-            is the
+              our own ventures
+            </em>
             <br />
-            product.
+            and ambitious businesses.
           </h1>
 
           <p
@@ -280,20 +280,20 @@ export default function Hero() {
             className="font-normal mb-6 xl:mb-7"
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(52px, 5.2vw, 78px)',
+              fontSize: 'clamp(34px, 3.6vw, 54px)',
               lineHeight: 1.05,
               letterSpacing: '-0.025em',
               color: '#171716',
             }}
           >
-            Ideas are cheap.
+            We build software.
             <br />
+            For{' '}
             <em className="italic" style={{ color: '#68655E' }}>
-              Execution
-            </em>{' '}
-            is the
+              our own ventures
+            </em>
             <br />
-            product.
+            and ambitious businesses.
           </h1>
 
           {/* Supporting paragraph - broader natural width closing empty space */}
