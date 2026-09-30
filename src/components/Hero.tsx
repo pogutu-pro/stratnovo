@@ -143,7 +143,7 @@ export default function Hero() {
       {/* ── MOBILE LAYOUT (< lg) ── */}
       <div className="lg:hidden pt-20 pb-8">
         <div className="px-6 py-6 animate-[fadeSlideIn_0.6s_ease_both]">
-          <div className="flex items-center gap-2.5 mb-4">
+          <div className="flex items-center justify-center gap-2.5 mb-4">
             <div className="w-5 h-px bg-[#68655E] flex-shrink-0" />
             <span
               style={{
@@ -163,20 +163,21 @@ export default function Hero() {
             className="font-normal mb-4"
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(32px, 8.6vw, 46px)',
+              fontSize: 'clamp(34px, 10.8vw, 50px)',
               lineHeight: 1.05,
               letterSpacing: '-0.025em',
               color: '#171716',
+              textAlign: 'center',
+              textWrap: 'balance',
             }}
           >
-            We build software.
+            We build what
             <br />
-            For{' '}
+            moves businesses
+            <br />
             <em className="italic" style={{ color: '#68655E' }}>
-              our own ventures
+              forward.
             </em>
-            <br />
-            and ambitious businesses.
           </h1>
 
           <p
@@ -280,20 +281,19 @@ export default function Hero() {
             className="font-normal mb-6 xl:mb-7"
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(34px, 3.6vw, 54px)',
+              fontSize: 'clamp(44px, 4.8vw, 70px)',
               lineHeight: 1.05,
               letterSpacing: '-0.025em',
               color: '#171716',
             }}
           >
-            We build software.
+            We build what
             <br />
-            For{' '}
+            moves businesses
+            <br />
             <em className="italic" style={{ color: '#68655E' }}>
-              our own ventures
+              forward.
             </em>
-            <br />
-            and ambitious businesses.
           </h1>
 
           {/* Supporting paragraph - broader natural width closing empty space */}
