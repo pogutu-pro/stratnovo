@@ -1,6 +1,6 @@
 import Nav from "./components/Nav"
 import Hero from "./components/Hero"
-import AreaStrip from "./components/AreaStrip"
+import PoweredBy from "./components/PoweredBy"
 import Positioning from "./components/Positioning"
 import BusinessAreas from "./components/BusinessAreas"
 import Products from "./components/Products"
@@ -20,7 +20,7 @@ export default function App() {
     <div style={{ backgroundColor: "#F7F5EF" }}>
       <Nav />
       <Hero />
-      <AreaStrip />
+      <PoweredBy />
       <Positioning />
       <BusinessAreas />
       <Products />
