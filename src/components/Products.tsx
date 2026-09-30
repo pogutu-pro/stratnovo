@@ -10,6 +10,7 @@ const products = [
       "Better living and accommodation discovery. Rumia helps people find the right spaces — connecting renters, buyers, and guests with properties that match how they want to live.",
     status: "Active",
     type: "StratNovo Venture",
+    url: "https://rumia.co.ke",
   },
   {
     num: "02",
@@ -19,6 +20,7 @@ const products = [
       "The core learning infrastructure. A serious software platform for structured digital education — courses, learning paths, assessments, live lessons, progress tracking, and instructor tools.",
     status: "Active",
     type: "StratNovo Platform",
+    url: "https://validbridge.co.ke",
   },
   {
     num: "03",
@@ -28,6 +30,7 @@ const products = [
       "The education and training experience powered by ValidBridge LMS. Practical, skills-focused learning for individuals and teams in digital, technology, and business fields.",
     status: "Active",
     type: "StratNovo Venture",
+    url: "https://validbridge.co.ke",
   },
   {
     num: "04",
@@ -37,6 +40,7 @@ const products = [
       "A property technology product focused on rental discovery — connecting prospective tenants with available spaces and giving property owners a structured platform to present listings and receive leads.",
     status: "Active",
     type: "StratNovo Product",
+    url: "https://rumiarent.com",
   },
   {
     num: "06",
@@ -46,6 +50,7 @@ const products = [
       "Social media management, publishing, and digital content workflows — built to help teams and businesses manage their digital presence with consistency and clarity.",
     status: "Active",
     type: "StratNovo Product",
+    url: "https://validpost.co.ke",
   },
   {
     num: "07",
@@ -55,8 +60,12 @@ const products = [
       "Collaborative work and productivity tools designed to help teams coordinate, communicate, and move projects forward with less friction.",
     status: "In Development",
     type: "StratNovo Product",
+    url: "https://rumiamanage.com",
   },
 ]
+
+const domainOf = (url: string) =>
+  url.replace(/^https?:\/\//, "").replace(/\/$/, "")
 
 export default function Products() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
@@ -106,9 +115,12 @@ export default function Products() {
 
         <div className="border-t" style={{ borderColor: "#D9D4C9" }}>
           {products.map((product, i) => (
-            <div
+            <a
               key={product.num}
-              className="group grid lg:grid-cols-12 border-b py-8 md:py-10 transition-all duration-200 cursor-pointer"
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group grid lg:grid-cols-12 border-b py-8 md:py-10 transition-all duration-200 no-underline"
               style={{
                 borderColor: "#D9D4C9",
                 backgroundColor: hoveredIdx === i ? "#F7F5EF" : "transparent",
@@ -158,7 +170,7 @@ export default function Products() {
                 </p>
               </div>
 
-              {/* Status + arrow */}
+              {/* Status + link */}
               <div className="lg:col-span-3 flex flex-col items-start lg:items-end justify-between gap-4 lg:gap-0">
                 <span
                   className="font-sans text-xs font-medium tracking-[0.1em] uppercase px-2.5 py-1"
@@ -178,10 +190,11 @@ export default function Products() {
                   className="font-sans text-sm font-medium flex items-center gap-2 transition-transform duration-200 group-hover:translate-x-1"
                   style={{ color: "#171716" }}
                 >
-                  View product →
+                  {domainOf(product.url)} <span aria-hidden="true">↗</span>
+                  <span className="sr-only">(opens in a new tab)</span>
                 </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </Container>

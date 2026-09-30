@@ -1,3 +1,5 @@
+import { useState } from "react"
+import type { CSSProperties, ReactNode } from "react"
 import { Container, Tag, ArrowLink } from "./ui"
 import rumiaImg from "../assets/marketing_rumia_2k.png"
 
@@ -11,6 +13,7 @@ const projects = [
     year: "2024",
     img: rumiaImg,
     tags: ["Product Engineering", "UI/UX", "Real Estate"],
+    url: "https://rumia.co.ke",
   },
   {
     name: "ValidBridge Academy",
@@ -21,6 +24,7 @@ const projects = [
     year: "2024",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&h=600&fit=crop&auto=format",
     tags: ["Platform Engineering", "EdTech", "Product Design"],
+    url: "https://validbridge.co.ke",
   },
   {
     name: "ValidPost",
@@ -31,6 +35,7 @@ const projects = [
     year: "2024",
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&h=600&fit=crop&auto=format",
     tags: ["SaaS", "Content Systems", "Automation"],
+    url: "https://validpost.co.ke",
   },
   {
     name: "Digital Growth System",
@@ -41,6 +46,7 @@ const projects = [
     year: "2024",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop&auto=format",
     tags: ["Digital Marketing", "Strategy", "Analytics"],
+    url: null,
   },
   {
     name: "RumiaRent",
@@ -51,16 +57,18 @@ const projects = [
     year: "2024",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=600&fit=crop&auto=format",
     tags: ["PropTech", "Product Engineering", "Rental Discovery"],
+    url: "https://rumiarent.com",
   },
   {
     name: "DPrime",
     category: "Technology Community Platform",
     description:
       "A platform for discovering and connecting with technology communities across Kenya — developer groups, campus tech clubs, events and organizations in one place.",
-    type: "Project",
+    type: "Client Project",
     year: "2024",
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=600&fit=crop&auto=format",
     tags: ["Community Platform", "Product Design", "Engineering"],
+    url: "https://dprime.co.ke",
   },
   {
     name: "The Flying Decksman",
@@ -71,10 +79,59 @@ const projects = [
     year: "2024",
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&h=600&fit=crop&auto=format",
     tags: ["Brand Website", "Digital Experience", "Editorial Design"],
+    url: "https://theflyicngdecksman.com",
   },
 ]
 
+const domainOf = (url: string) =>
+  url.replace(/^https?:\/\//, "").replace(/\/$/, "")
+
+function ProjectCard({
+  url,
+  className,
+  style,
+  onMouseEnter,
+  onMouseLeave,
+  children,
+}: {
+  url: string | null
+  className?: string
+  style?: CSSProperties
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  children: ReactNode
+}) {
+  if (!url) {
+    return (
+      <div
+        className={className}
+        style={style}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        {children}
+      </div>
+    )
+  }
+
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      style={style}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {children}
+    </a>
+  )
+}
+
 export default function SelectedWork() {
+  const [hoveredName, setHoveredName] = useState<string | null>(null)
+
   return (
     <section
       id="work"
@@ -112,15 +169,15 @@ export default function SelectedWork() {
 
         <div className="grid gap-6 md:gap-8">
           {/* First project — full width */}
-          <div
-            className="group cursor-pointer grid lg:grid-cols-12 border transition-all duration-300"
-            style={{ borderColor: "#D9D4C9" }}
-            onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLDivElement).style.borderColor = "#9B968D"
+          <ProjectCard
+            url={projects[0].url}
+            className="group grid lg:grid-cols-12 border transition-all duration-300 no-underline"
+            style={{
+              borderColor:
+                hoveredName === projects[0].name ? "#9B968D" : "#D9D4C9",
             }}
-            onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLDivElement).style.borderColor = "#D9D4C9"
-            }}
+            onMouseEnter={() => setHoveredName(projects[0].name)}
+            onMouseLeave={() => setHoveredName(null)}
           >
             <div
               className="lg:col-span-7 overflow-hidden"
@@ -167,37 +224,47 @@ export default function SelectedWork() {
                 </p>
               </div>
               <div
-                className="flex flex-wrap gap-2 mt-6 pt-6 border-t"
+                className="flex flex-wrap gap-2 mt-6 pt-6 border-t items-center justify-between"
                 style={{ borderColor: "#D9D4C9" }}
               >
-                {projects[0].tags.map((tag) => (
+                <div className="flex flex-wrap gap-2">
+                  {projects[0].tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-sans text-[11px] font-medium tracking-[0.08em] uppercase px-2.5 py-1 border"
+                      style={{ borderColor: "#D9D4C9", color: "#68655E" }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {projects[0].url && (
                   <span
-                    key={tag}
-                    className="font-sans text-[11px] font-medium tracking-[0.08em] uppercase px-2.5 py-1 border"
-                    style={{ borderColor: "#D9D4C9", color: "#68655E" }}
+                    className="font-sans text-sm font-medium flex items-center gap-2 transition-transform duration-200 group-hover:translate-x-1"
+                    style={{ color: "#171716" }}
                   >
-                    {tag}
+                    {domainOf(projects[0].url)}{" "}
+                    <span aria-hidden="true">↗</span>
+                    <span className="sr-only">(opens in a new tab)</span>
                   </span>
-                ))}
+                )}
               </div>
             </div>
-          </div>
+          </ProjectCard>
 
           {/* Remaining projects — 3 columns */}
           <div className="grid md:grid-cols-3 gap-6">
             {projects.slice(1).map((project) => (
-              <div
+              <ProjectCard
                 key={project.name}
-                className="group cursor-pointer border transition-all duration-300"
-                style={{ borderColor: "#D9D4C9" }}
-                onMouseEnter={(e) => {
-                  ;(e.currentTarget as HTMLDivElement).style.borderColor =
-                    "#9B968D"
+                url={project.url}
+                className="group border transition-all duration-300 no-underline flex flex-col"
+                style={{
+                  borderColor:
+                    hoveredName === project.name ? "#9B968D" : "#D9D4C9",
                 }}
-                onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLDivElement).style.borderColor =
-                    "#D9D4C9"
-                }}
+                onMouseEnter={() => setHoveredName(project.name)}
+                onMouseLeave={() => setHoveredName(null)}
               >
                 <div
                   className="overflow-hidden"
@@ -209,7 +276,7 @@ export default function SelectedWork() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <Tag>{project.type}</Tag>
                     <span
@@ -237,8 +304,17 @@ export default function SelectedWork() {
                   >
                     {project.description}
                   </p>
+                  {project.url && (
+                    <span
+                      className="font-sans text-xs font-medium mt-4 flex items-center gap-1.5 transition-transform duration-200 group-hover:translate-x-1"
+                      style={{ color: "#171716" }}
+                    >
+                      {domainOf(project.url)} <span aria-hidden="true">↗</span>
+                      <span className="sr-only">(opens in a new tab)</span>
+                    </span>
+                  )}
                 </div>
-              </div>
+              </ProjectCard>
             ))}
           </div>
         </div>

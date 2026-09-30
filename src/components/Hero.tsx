@@ -142,7 +142,19 @@ export default function Hero() {
     <section className="relative overflow-hidden" style={{ backgroundColor: '#F8F7F2' }}>
       {/* ── MOBILE LAYOUT (< lg) ── */}
       <div className="lg:hidden pt-20 pb-8">
-        <div className="px-6 py-6 animate-[fadeSlideIn_0.6s_ease_both]">
+        {/* 2×2 photo collage — leads on mobile, mirrors the desktop right column */}
+        <div className="px-4 mb-7 animate-[fadeIn_0.5s_ease_both]">
+          <div
+            className="grid grid-cols-2 grid-rows-2 gap-[2px] rounded-xl overflow-hidden shadow-sm aspect-square"
+            style={{ backgroundColor: '#171716' }}
+          >
+            {panels.map((panel) => (
+              <PhotoPanel key={panel.num} panel={panel} />
+            ))}
+          </div>
+        </div>
+
+        <div className="px-6 pb-6 animate-[fadeSlideIn_0.6s_ease_both]">
           <div className="flex items-center justify-center gap-2.5 mb-4">
             <div className="w-5 h-px bg-[#68655E] flex-shrink-0" />
             <span
@@ -221,23 +233,6 @@ export default function Hero() {
             >
               Explore our work
             </a>
-          </div>
-        </div>
-
-        {/* 2×2 mobile photo collage with padding */}
-        <div className="px-4 mt-4">
-          <div
-            className="grid grid-cols-2 grid-rows-2 gap-[2px] rounded-xl overflow-hidden shadow-sm"
-            style={{
-              backgroundColor: '#171716',
-              height: '65vw',
-              minHeight: '260px',
-              maxHeight: '340px',
-            }}
-          >
-            {panels.map((panel) => (
-              <PhotoPanel key={panel.num} panel={panel} />
-            ))}
           </div>
         </div>
       </div>
