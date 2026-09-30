@@ -2,7 +2,7 @@
   "title": "stratnovo redesign",
   "description": "StratNovo's website showcases its expertise in software development, digital marketing, professional training, and real estate management, offering a cohesive platform for businesses and individuals seeking innovative solutions.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
