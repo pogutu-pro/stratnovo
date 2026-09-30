@@ -38,24 +38,20 @@ const panels = [
 
 function PhotoPanel({
   panel,
-  loading,
 }: {
   panel: (typeof panels)[0]
-  loading: "eager" | "lazy"
 }) {
   return (
     <a
       href={areas.find((a) => a.label === panel.area)?.href ?? '#'}
-      className="group relative block overflow-hidden no-underline h-full active:opacity-90"
-      style={{ backgroundColor: '#1E1E1C' }}
+      className="group relative block overflow-hidden no-underline h-full"
+      style={{
+        backgroundColor: '#1E1E1C',
+      }}
     >
       <img
         src={panel.img}
         alt={panel.alt}
-        width={900}
-        height={800}
-        loading={loading}
-        decoding="async"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         style={{
           filter: 'grayscale(15%) contrast(1.06)',
@@ -76,14 +72,14 @@ function PhotoPanel({
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(to top, rgba(23,23,22,0.88) 0%, rgba(23,23,22,0.18) 50%, rgba(23,23,22,0.35) 100%)',
+            'linear-gradient(to top, rgba(23,23,22,0.85) 0%, rgba(23,23,22,0.18) 50%, rgba(23,23,22,0.35) 100%)',
         }}
       />
 
       {/* Top number indicator for panels 03 & 04 */}
       {(panel.num === '03' || panel.num === '04') && (
         <div
-          className="absolute top-3 left-3 md:top-4 md:left-4"
+          className="absolute top-4 left-4"
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: '10px',
@@ -98,17 +94,16 @@ function PhotoPanel({
       )}
 
       {/* Bottom text block */}
-      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 lg:p-5 flex items-end justify-between gap-2">
-        <div className="min-w-0">
+      <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5 flex items-end justify-between">
+        <div>
           <div
-            className="truncate"
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: '10px',
+              fontSize: '9px',
               fontWeight: 500,
-              letterSpacing: '0.12em',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'rgba(248,247,242,0.65)',
+              color: 'rgba(248,247,242,0.6)',
               marginBottom: '3px',
             }}
           >
@@ -117,7 +112,7 @@ function PhotoPanel({
           <div
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(18px, 2.2vw, 28px)',
+              fontSize: 'clamp(20px, 2.2vw, 28px)',
               letterSpacing: '-0.01em',
               color: 'rgba(248,247,242,0.95)',
               lineHeight: 1,
@@ -127,7 +122,6 @@ function PhotoPanel({
           </div>
         </div>
         <span
-          aria-hidden="true"
           className="transition-transform duration-200 group-hover:translate-x-1"
           style={{
             fontFamily: "'DM Sans', sans-serif",
@@ -146,28 +140,30 @@ function PhotoPanel({
 export default function Hero() {
   return (
     <section className="relative overflow-hidden" style={{ backgroundColor: '#F8F7F2' }}>
-      {/* ── MOBILE / TABLET LAYOUT (< lg) ── */}
-      <div style={{ paddingTop: 'calc(4rem + env(safe-area-inset-top))' }}>
-        <div className="px-5 py-7 sm:px-6 sm:py-8 md:px-10 md:py-10 lg:px-16 animate-[fadeSlideIn_0.6s_ease_both]">
+      {/* ── MOBILE LAYOUT (< lg) ── */}
+      <div className="lg:hidden pt-20 pb-8">
+        <div className="px-6 py-6 animate-[fadeSlideIn_0.6s_ease_both]">
           <div className="flex items-center gap-2.5 mb-4">
             <div className="w-5 h-px bg-[#68655E] flex-shrink-0" />
             <span
-              className="font-sans font-medium uppercase"
               style={{
-                fontSize: '10px',
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: '9px',
+                fontWeight: 500,
                 letterSpacing: '0.16em',
+                textTransform: 'uppercase',
                 color: '#68655E',
               }}
             >
-              StratNovo / Technology &amp; Ventures
+              STRATNOVO / TECHNOLOGY & VENTURES
             </span>
           </div>
 
           <h1
-            className="font-normal mb-4 sm:mb-5"
+            className="font-normal mb-4"
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: 'clamp(38px, 10.5vw, 56px)',
+              fontSize: 'clamp(42px, 11vw, 56px)',
               lineHeight: 1.05,
               letterSpacing: '-0.025em',
               color: '#171716',
@@ -184,29 +180,28 @@ export default function Hero() {
           </h1>
 
           <p
-            className="font-sans mb-7 sm:mb-8"
+            className="mb-7"
             style={{
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: '15px',
               lineHeight: 1.7,
               fontWeight: 300,
               color: '#68655E',
-              maxWidth: '46ch',
             }}
           >
             We build digital products, software systems, growth experiences, learning platforms, and
             property solutions for people and businesses ready to move forward.
           </p>
 
-          <div className="flex flex-col xs:flex-row xs:items-center gap-3">
+          <div className="flex flex-col gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 no-underline transition-colors duration-200 active:scale-[0.99] w-full xs:w-auto"
+              className="inline-flex items-center justify-center gap-2 no-underline transition-all duration-200 active:scale-[0.99]"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: '13px',
                 fontWeight: 500,
-                minHeight: '48px',
-                padding: '13px 28px',
+                padding: '14px 28px',
                 backgroundColor: '#171716',
                 color: '#F8F7F2',
               }}
@@ -215,13 +210,11 @@ export default function Hero() {
             </a>
             <a
               href="#work"
-              className="inline-flex items-center justify-center no-underline transition-opacity hover:opacity-60 w-full xs:w-auto"
+              className="no-underline text-center py-1.5 transition-opacity hover:opacity-60"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: '13px',
                 fontWeight: 400,
-                minHeight: '48px',
-                padding: '6px 28px',
                 color: '#68655E',
               }}
             >
@@ -230,19 +223,19 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 2×2 photo collage */}
-        <div className="px-3 sm:px-4 pb-2">
+        {/* 2×2 mobile photo collage with padding */}
+        <div className="px-4 mt-4">
           <div
             className="grid grid-cols-2 grid-rows-2 gap-[2px] rounded-xl overflow-hidden shadow-sm"
             style={{
               backgroundColor: '#171716',
-              // Square-ish cells, but never so short that the caption
-              // overlaps the image on small phones.
-              height: 'clamp(240px, 62vw, 340px)',
+              height: '65vw',
+              minHeight: '260px',
+              maxHeight: '340px',
             }}
           >
             {panels.map((panel) => (
-              <PhotoPanel key={panel.num} panel={panel} loading="eager" />
+              <PhotoPanel key={panel.num} panel={panel} />
             ))}
           </div>
         </div>
@@ -269,14 +262,16 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-5 xl:mb-6">
             <div className="w-6 h-px bg-[#68655E] flex-shrink-0" />
             <span
-              className="font-sans font-medium uppercase"
               style={{
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: '10px',
+                fontWeight: 500,
                 letterSpacing: '0.16em',
+                textTransform: 'uppercase',
                 color: '#68655E',
               }}
             >
-              StratNovo / Technology &amp; Ventures
+              STRATNOVO / TECHNOLOGY & VENTURES
             </span>
           </div>
 
@@ -303,8 +298,9 @@ export default function Hero() {
 
           {/* Supporting paragraph - broader natural width closing empty space */}
           <p
-            className="font-sans mb-8 xl:mb-9"
+            className="mb-8 xl:mb-9"
             style={{
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: '16px',
               lineHeight: 1.7,
               fontWeight: 300,
@@ -320,7 +316,7 @@ export default function Hero() {
           <div className="flex items-center gap-6 flex-wrap">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 no-underline transition-colors duration-200 cursor-pointer"
+              className="inline-flex items-center gap-2 no-underline transition-all duration-200 hover:shadow-md cursor-pointer"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: '13px',
@@ -364,10 +360,10 @@ export default function Hero() {
               animationDelay: '0.2s',
             }}
           >
-            <PhotoPanel panel={panels[0]} loading="eager" />
-            <PhotoPanel panel={panels[1]} loading="eager" />
-            <PhotoPanel panel={panels[2]} loading="eager" />
-            <PhotoPanel panel={panels[3]} loading="eager" />
+            <PhotoPanel panel={panels[0]} />
+            <PhotoPanel panel={panels[1]} />
+            <PhotoPanel panel={panels[2]} />
+            <PhotoPanel panel={panels[3]} />
           </div>
         </div>
       </div>

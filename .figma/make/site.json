@@ -1,11 +1,11 @@
 {
-  "title": "StratNovo — Technology, Growth, Learning & Property",
-  "description": "StratNovo builds digital products, software systems, growth experiences, learning platforms, and property solutions for people and businesses ready to move forward.",
+  "title": "stratnovo redesign",
+  "description": "StratNovo's website showcases its expertise in software development, digital marketing, professional training, and real estate management, offering a cohesive platform for businesses and individuals seeking innovative solutions.",
   "robots": {
-    "index": true
+    "index": false
   },
   "accessibility": {
-    "addBypassLinks": true,
-    "ignoreReducedMotion": true
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
   }
 }

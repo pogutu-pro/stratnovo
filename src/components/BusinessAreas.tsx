@@ -1,4 +1,4 @@
-import { Section, SectionLabel, Tag } from "./ui"
+import { Container, Tag, ArrowLink } from "./ui"
 
 const areas = [
   {
@@ -37,89 +37,85 @@ const areas = [
 
 export default function BusinessAreas() {
   return (
-    <Section>
-      {/* Spacing lives on this row rather than being forced onto `Eyebrow`
-          with a `mb-0` override, which loses to the component's own margin. */}
-      <div className="flex items-center justify-between gap-4 mb-10 sm:mb-12">
-        <div className="flex items-center gap-3">
-          <div
-            className="w-5 h-px sm:w-6 flex-shrink-0"
-            style={{ backgroundColor: "#68655E" }}
-          />
-          <SectionLabel>What We Do</SectionLabel>
+    <section style={{ backgroundColor: "#F7F5EF", padding: "96px 0" }}>
+      <Container>
+        <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center gap-3">
+            <div className="w-6 h-px" style={{ backgroundColor: "#68655E" }} />
+            <span
+              className="text-xs font-sans font-medium tracking-[0.15em] uppercase"
+              style={{ color: "#68655E" }}
+            >
+              What We Do
+            </span>
+          </div>
+          <span className="font-sans text-xs" style={{ color: "#9B968D" }}>
+            Four connected areas
+          </span>
         </div>
-        <span className="font-sans text-xs flex-shrink-0" style={{ color: "#9B968D" }}>
-          Four connected areas
-        </span>
-      </div>
 
-      <div className="border-t border-[#D9D4C9]">
-        {areas.map((area) => (
-          /* The whole row is one link, so the tap target is the full row on
-             phones instead of just the small "Explore" label. */
-          <a
-            key={area.num}
-            href={area.href}
-            className="group grid lg:grid-cols-12 border-b border-[#D9D4C9] py-7 sm:py-9 md:py-12 no-underline transition-colors duration-200 hover:bg-[#E8E0D2] active:bg-[#E1D7C5]"
-          >
-            {/* Number */}
-            <div className="lg:col-span-1 mb-3 lg:mb-0">
-              <span
-                className="font-sans text-sm font-medium"
-                style={{ color: "#9B968D" }}
-              >
-                {area.num}
-              </span>
-            </div>
-
-            {/* Area name */}
-            <div className="lg:col-span-3 mb-3 lg:mb-0 lg:pr-8">
-              <h3
-                className="font-serif leading-none"
-                style={{
-                  fontSize: "clamp(34px, 4.4vw, 56px)",
-                  color: "#171716",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {area.name}
-              </h3>
-            </div>
-
-            {/* Description */}
-            <div className="lg:col-span-6 lg:pr-8">
-              <Tag>{area.category}</Tag>
-              <p
-                className="font-sans leading-relaxed mt-3 sm:mt-4"
-                style={{
-                  color: "#68655E",
-                  fontWeight: 300,
-                  fontSize: "15px",
-                }}
-              >
-                {area.description}
-              </p>
-            </div>
-
-            {/* Arrow — a span, not a link: the whole row is already a link and
-                nested anchors are invalid HTML. */}
-            <div className="lg:col-span-2 flex items-center justify-end mt-5 lg:mt-0">
-              <span
-                className="inline-flex items-center gap-2 font-sans text-sm font-medium transition-opacity duration-200 group-hover:opacity-60"
-                style={{ color: "#171716" }}
-              >
-                Explore
+        <div className="border-t" style={{ borderColor: "#D9D4C9" }}>
+          {areas.map((area) => (
+            <div
+              key={area.num}
+              className="group grid lg:grid-cols-12 border-b py-10 md:py-12 transition-colors duration-200 cursor-pointer"
+              style={{ borderColor: "#D9D4C9" }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLDivElement).style.backgroundColor =
+                  "#E8E0D2"
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLDivElement).style.backgroundColor =
+                  "transparent"
+              }}
+            >
+              {/* Number */}
+              <div className="lg:col-span-1 mb-4 lg:mb-0">
                 <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 group-hover:translate-x-1"
+                  className="font-sans text-sm font-medium"
+                  style={{ color: "#9B968D" }}
                 >
-                  →
+                  {area.num}
                 </span>
-              </span>
+              </div>
+
+              {/* Area name */}
+              <div className="lg:col-span-3 mb-4 lg:mb-0 lg:pr-8">
+                <h3
+                  className="font-serif leading-none"
+                  style={{
+                    fontSize: "clamp(36px, 4vw, 56px)",
+                    color: "#171716",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {area.name}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <div className="lg:col-span-6 lg:pr-8">
+                <Tag>{area.category}</Tag>
+                <p
+                  className="font-sans text-sm leading-relaxed mt-4"
+                  style={{
+                    color: "#68655E",
+                    fontWeight: 300,
+                    fontSize: "15px",
+                  }}
+                >
+                  {area.description}
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <div className="lg:col-span-2 flex items-center justify-end mt-6 lg:mt-0">
+                <ArrowLink href={area.href}>Explore</ArrowLink>
+              </div>
             </div>
-          </a>
-        ))}
-      </div>
-    </Section>
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }

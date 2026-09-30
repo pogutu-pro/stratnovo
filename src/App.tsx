@@ -17,24 +17,22 @@ import Footer from "./components/Footer"
 
 export default function App() {
   return (
-    <div id="top" style={{ backgroundColor: "#F7F5EF" }}>
+    <div style={{ backgroundColor: "#F7F5EF" }}>
       <Nav />
-      <main id="main">
-        <Hero />
-        <AreaStrip />
-        <Positioning />
-        <BusinessAreas />
-        <Products />
-        <DigitalMarketing />
-        <Academy />
-        <RealEstate />
-        <WhatWeBuild />
-        <SelectedWork />
-        <HowWeWork />
-        <Technology />
-        <DarkStatement />
-        <FinalCTA />
-      </main>
+      <Hero />
+      <AreaStrip />
+      <Positioning />
+      <BusinessAreas />
+      <Products />
+      <DigitalMarketing />
+      <Academy />
+      <RealEstate />
+      <WhatWeBuild />
+      <SelectedWork />
+      <HowWeWork />
+      <Technology />
+      <DarkStatement />
+      <FinalCTA />
       <Footer />
     </div>
   )

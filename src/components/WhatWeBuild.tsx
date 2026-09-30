@@ -1,4 +1,4 @@
-import { Section, Eyebrow } from "./ui"
+import { Container } from "./ui"
 
 const capabilities = [
   {
@@ -53,65 +53,87 @@ const capabilities = [
 
 export default function WhatWeBuild() {
   return (
-    <Section tone="beige">
-      <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 mb-10 sm:mb-16">
-        <div className="lg:col-span-6">
-          <Eyebrow>What We Build</Eyebrow>
-          <h2
-            className="font-serif leading-tight"
-            style={{
-              fontSize: "clamp(30px, 4.4vw, 52px)",
-              color: "#171716",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Software development is a core capability.
-          </h2>
-        </div>
-        <div className="lg:col-span-6 lg:flex lg:items-end">
-          <p
-            className="font-sans leading-relaxed"
-            style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
-          >
-            StratNovo moves from understanding a problem, to shaping a product
-            or system, to designing the experience, to building the
-            technology, to launching and improving it. The same end-to-end
-            capability that we use for our own ventures is available for
-            client projects.
-          </p>
-        </div>
-      </div>
-
-      {/* Single column on phones, 2 from `sm`, 4 from `lg`. The border box
-          (`border-t border-l` on the grid, `border-b border-r` on the cells)
-          keeps the rules correct at every column count. */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-[#D9D4C9]">
-        {capabilities.map((cap) => (
-          <div
-            key={cap.num}
-            className="border-b border-r border-[#D9D4C9] p-5 sm:p-6 lg:p-8 transition-colors duration-200 hover:bg-[#F7F5EF] active:bg-[#F0EDE4]"
-          >
-            <div
-              className="font-sans text-xs font-medium tracking-[0.1em] mb-3 sm:mb-4"
-              style={{ color: "#9B968D" }}
-            >
-              {cap.num}
+    <section style={{ backgroundColor: "#E8E0D2", padding: "96px 0" }}>
+      <Container>
+        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          <div className="lg:col-span-6">
+            <div className="flex items-center gap-3 mb-8">
+              <div
+                className="w-6 h-px"
+                style={{ backgroundColor: "#68655E" }}
+              />
+              <span
+                className="text-xs font-sans font-medium tracking-[0.15em] uppercase"
+                style={{ color: "#68655E" }}
+              >
+                What We Build
+              </span>
             </div>
-            <div
-              className="font-sans text-sm font-medium mb-2"
-              style={{ color: "#171716" }}
+            <h2
+              className="font-serif leading-tight"
+              style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                color: "#171716",
+                letterSpacing: "-0.02em",
+              }}
             >
-              {cap.name}
-            </div>
-            <div
-              className="font-sans text-xs leading-relaxed"
-              style={{ color: "#68655E", fontWeight: 300 }}
-            >
-              {cap.description}
-            </div>
+              Software development is a core capability.
+            </h2>
           </div>
-        ))}
-      </div>
-    </Section>
+          <div className="lg:col-span-6 lg:flex lg:items-end">
+            <p
+              className="font-sans leading-relaxed"
+              style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
+            >
+              StratNovo moves from understanding a problem, to shaping a product
+              or system, to designing the experience, to building the
+              technology, to launching and improving it. The same end-to-end
+              capability that we use for our own ventures is available for
+              client projects.
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="grid md:grid-cols-2 lg:grid-cols-4 border-t border-l"
+          style={{ borderColor: "#D9D4C9" }}
+        >
+          {capabilities.map((cap) => (
+            <div
+              key={cap.num}
+              className="border-b border-r p-8 group transition-colors duration-200"
+              style={{ borderColor: "#D9D4C9" }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLDivElement).style.backgroundColor =
+                  "#F7F5EF"
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLDivElement).style.backgroundColor =
+                  "transparent"
+              }}
+            >
+              <div
+                className="font-sans text-xs font-medium tracking-[0.1em] mb-4"
+                style={{ color: "#9B968D" }}
+              >
+                {cap.num}
+              </div>
+              <div
+                className="font-sans text-sm font-medium mb-2"
+                style={{ color: "#171716" }}
+              >
+                {cap.name}
+              </div>
+              <div
+                className="font-sans text-xs leading-relaxed"
+                style={{ color: "#68655E", fontWeight: 300 }}
+              >
+                {cap.description}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
   )
 }

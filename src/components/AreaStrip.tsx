@@ -20,34 +20,40 @@ const areas = [
   },
 ]
 
-/**
- * Divider placement is index-aware so a cell only gets a rule where it has a
- * neighbour to its right (or below) at that breakpoint. `grid-cols-2` on
- * phones and `grid-cols-4` from `lg` have different neighbours, so the
- * `lg:` prefix flips cell 02 back on.
- */
-const borderClasses = [
-  "border-r border-b",
-  "lg:border-r border-b",
-  "border-r",
-  "",
-]
-
 export default function AreaStrip() {
   return (
-    <nav
-      aria-label="Business areas"
-      className="grid grid-cols-2 lg:grid-cols-4 border-[#D9D4C9] border-y"
-      style={{ backgroundColor: "#EDE6D8" }}
+    <div
+      className="grid grid-cols-2 lg:grid-cols-4"
+      style={{
+        backgroundColor: "#EDE6D8",
+        borderTop: "1px solid #D9D4C9",
+        borderBottom: "1px solid #D9D4C9",
+      }}
     >
       {areas.map((area, i) => (
         <a
           key={area.label}
           href={area.href}
-          className={`flex flex-col justify-center no-underline transition-colors duration-150 hover:bg-[#E4DAC8] active:bg-[#DFD3BE] ${borderClasses[i]}`}
+          className="flex flex-col"
           style={{
-            minHeight: "104px",
-            padding: "clamp(16px, 3.5vw, 24px) clamp(14px, 3.5vw, 28px)",
+            padding: "clamp(16px, 3vw, 24px) clamp(16px, 3vw, 28px)",
+            borderRight:
+              i % 2 === 0
+                ? "1px solid #D9D4C9"
+                : i < 3
+                  ? "1px solid #D9D4C9"
+                  : "none",
+            borderBottom: i < 2 ? "1px solid #D9D4C9" : "none",
+            textDecoration: "none",
+            transition: "background-color 150ms",
+          }}
+          onMouseEnter={(e) => {
+            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              "#E4DAC8"
+          }}
+          onMouseLeave={(e) => {
+            ;(e.currentTarget as HTMLAnchorElement).style.backgroundColor =
+              "transparent"
           }}
         >
           <div
@@ -55,50 +61,47 @@ export default function AreaStrip() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: "6px",
+              marginBottom: "8px",
             }}
           >
             <span
-              className="font-sans font-medium uppercase"
               style={{
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "9px",
+                fontWeight: 500,
                 letterSpacing: "0.14em",
                 color: "#9B968D",
+                textTransform: "uppercase",
               }}
             >
               {area.num}
             </span>
-            <span
-              aria-hidden="true"
-              className="font-sans"
-              style={{ fontSize: "12px", color: "#9B968D" }}
-            >
-              →
-            </span>
+            <span style={{ fontSize: "12px", color: "#9B968D" }}>→</span>
           </div>
           <span
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
-              fontSize: "clamp(19px, 2.6vw, 22px)",
+              fontSize: "clamp(18px, 2.5vw, 22px)",
               color: "#171716",
               letterSpacing: "-0.01em",
               marginBottom: "4px",
-              lineHeight: 1.05,
+              lineHeight: 1,
             }}
           >
             {area.label}
           </span>
           <span
-            className="font-sans font-light"
             style={{
-              fontSize: "clamp(10px, 2.6vw, 11px)",
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "11px",
               color: "#9B968D",
+              fontWeight: 300,
             }}
           >
             {area.sub}
           </span>
         </a>
       ))}
-    </nav>
+    </div>
   )
 }

@@ -1,39 +1,55 @@
-import { Section } from "./ui"
+import { Container, ArrowLink } from "./ui"
 
 export default function DarkStatement() {
   return (
-    <Section tone="charcoal" size="lg">
-      <div className="grid lg:grid-cols-12">
-        <div className="lg:col-span-10 lg:col-start-2">
-          <p
-            className="font-serif leading-[1.08] mb-8 sm:mb-12"
+    <section
+      style={{
+        backgroundColor: "#171716",
+        padding: "120px 0",
+        overflow: "hidden",
+      }}
+    >
+      <Container>
+        <div className="text-center max-w-4xl mx-auto">
+          <span
+            className="font-sans text-xs font-medium tracking-[0.15em] uppercase mb-8 inline-block"
+            style={{ color: "#9B968D" }}
+          >
+            The StratNovo Standard
+          </span>
+          <h2
+            className="font-serif leading-tight mb-10"
             style={{
-              fontSize: "clamp(34px, 6.5vw, 88px)",
+              fontSize: "clamp(32px, 4vw, 56px)",
               color: "#F7F5EF",
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.02em",
             }}
           >
-            Ideas are cheap.
+            We measure value by outcomes —
             <br />
-            <em style={{ color: "#9B968D" }}>Execution is the product.</em>
-          </p>
-
-          <div
-            className="w-12 h-px mb-8 sm:mb-12"
-            style={{ backgroundColor: "#68655E" }}
-          />
-
+            <em>not by work performed.</em>
+          </h2>
           <p
-            className="font-sans text-base sm:text-lg leading-relaxed max-w-2xl"
-            style={{ color: "#9B968D", fontWeight: 300 }}
+            className="font-sans text-base leading-relaxed mb-10 mx-auto"
+            style={{
+              color: "#BFB8AC",
+              fontWeight: 300,
+              fontSize: "16px",
+              maxWidth: "560px",
+            }}
           >
-            StratNovo exists to move things forward — whether that means
-            engineering a new product, building a growth system, delivering a
-            course, or finding someone the right place to live. The work is
-            always practical, always intentional.
+            Every engagement — whether a product, a campaign, a learning
+            program, or a property service — is judged by whether it moved
+            something real for the people it was built for. That is the
+            standard we hold ourselves to.
           </p>
+          <div className="flex justify-center">
+            <ArrowLink href="#contact" dark>
+              Work with us
+            </ArrowLink>
+          </div>
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   )
 }

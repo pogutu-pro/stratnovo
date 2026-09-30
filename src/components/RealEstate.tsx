@@ -1,4 +1,4 @@
-import { Section, Eyebrow, ArrowLink, Tag } from "./ui"
+import { Container, ArrowLink, Tag } from "./ui"
 
 const services = [
   {
@@ -49,159 +49,165 @@ const featuredProperties = [
 
 export default function RealEstate() {
   return (
-    <Section id="properties">
-      {/* Header */}
-      <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 mb-10 sm:mb-16">
-        <div className="lg:col-span-6">
-          <Eyebrow>Real Estate &amp; Property</Eyebrow>
-          <h2
-            className="font-serif leading-tight mb-5 sm:mb-6"
-            style={{
-              fontSize: "clamp(30px, 4.4vw, 52px)",
-              color: "#171716",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Better ways to find, manage, and experience property.
-          </h2>
-          <p
-            className="font-sans leading-relaxed mb-5"
-            style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
-          >
-            StratNovo manages and lists properties, supports property owners,
-            and helps people find the right spaces. Our property services are
-            connected to Rumia — our accommodation and property discovery
-            platform.
-          </p>
-          <ArrowLink href="#contact">Explore listings</ArrowLink>
+    <section
+      id="properties"
+      style={{ backgroundColor: "#F7F5EF", padding: "96px 0" }}
+    >
+      <Container>
+        {/* Header */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+          <div className="lg:col-span-6">
+            <div className="flex items-center gap-3 mb-8">
+              <div
+                className="w-6 h-px"
+                style={{ backgroundColor: "#68655E" }}
+              />
+              <span
+                className="text-xs font-sans font-medium tracking-[0.15em] uppercase"
+                style={{ color: "#68655E" }}
+              >
+                Real Estate & Property
+              </span>
+            </div>
+            <h2
+              className="font-serif leading-tight mb-6"
+              style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                color: "#171716",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Better ways to find, manage, and experience property.
+            </h2>
+            <p
+              className="font-sans text-base leading-relaxed mb-4"
+              style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
+            >
+              StratNovo manages and lists properties, supports property owners,
+              and helps people find the right spaces. Our property services are
+              connected to Rumia — our accommodation and property discovery
+              platform.
+            </p>
+            <ArrowLink href="#contact">Explore listings</ArrowLink>
+          </div>
+
+          <div className="lg:col-span-6">
+            {/* Services index */}
+            <div className="border-t" style={{ borderColor: "#D9D4C9" }}>
+              {services.map((svc) => (
+                <div
+                  key={svc.label}
+                  className="border-b py-5 group"
+                  style={{ borderColor: "#D9D4C9" }}
+                >
+                  <div
+                    className="font-sans text-sm font-medium mb-1"
+                    style={{ color: "#2C2B28" }}
+                  >
+                    {svc.label}
+                  </div>
+                  <div
+                    className="font-sans text-xs leading-relaxed"
+                    style={{ color: "#68655E", fontWeight: 300 }}
+                  >
+                    {svc.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="lg:col-span-6">
-          {/* Services index */}
-          <div className="border-t border-[#D9D4C9]">
-            {services.map((svc) => (
-              <div
-                key={svc.label}
-                className="border-b border-[#D9D4C9] py-4 sm:py-5"
-              >
+        {/* Property previews */}
+        <div className="border-t pt-12" style={{ borderColor: "#D9D4C9" }}>
+          <div className="flex items-center justify-between mb-8">
+            <span
+              className="font-sans text-xs font-medium tracking-[0.12em] uppercase"
+              style={{ color: "#9B968D" }}
+            >
+              Selected Properties
+            </span>
+            <ArrowLink href="#contact">View all</ArrowLink>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {featuredProperties.map((prop) => (
+              <div key={prop.name} className="group cursor-pointer">
                 <div
-                  className="font-sans text-sm font-medium mb-1"
-                  style={{ color: "#2C2B28" }}
+                  className="overflow-hidden mb-4 relative"
+                  style={{ backgroundColor: "#D5C9B7", aspectRatio: "4/3" }}
                 >
-                  {svc.label}
+                  <img
+                    src={prop.img}
+                    alt={prop.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 right-3">
+                    <span
+                      className="font-sans text-[10px] font-medium tracking-[0.1em] uppercase px-2 py-1"
+                      style={{
+                        backgroundColor: "#F7F5EF",
+                        color:
+                          prop.status === "Available" ? "#171716" : "#68655E",
+                      }}
+                    >
+                      {prop.status}
+                    </span>
+                  </div>
                 </div>
-                <div
-                  className="font-sans text-xs leading-relaxed"
-                  style={{ color: "#68655E", fontWeight: 300 }}
-                >
-                  {svc.description}
+                <div className="flex items-start justify-between">
+                  <div>
+                    <div
+                      className="font-sans text-sm font-medium mb-0.5"
+                      style={{ color: "#171716" }}
+                    >
+                      {prop.name}
+                    </div>
+                    <div
+                      className="font-sans text-xs"
+                      style={{ color: "#9B968D" }}
+                    >
+                      {prop.location} · {prop.type}
+                    </div>
+                  </div>
+                  <span
+                    className="font-sans text-xs transition-transform duration-200 group-hover:translate-x-1 mt-1"
+                    style={{ color: "#68655E" }}
+                  >
+                    →
+                  </span>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Property previews */}
-      <div className="border-t border-[#D9D4C9] pt-8 sm:pt-12">
-        <div className="flex items-center justify-between gap-4 mb-6 sm:mb-8">
-          <span
-            className="font-sans text-xs font-medium tracking-[0.12em] uppercase"
-            style={{ color: "#9B968D" }}
+          {/* Rumia connection */}
+          <div
+            className="mt-12 p-8 border flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+            style={{ borderColor: "#D9D4C9", backgroundColor: "#E8E0D2" }}
           >
-            Selected Properties
-          </span>
-          <ArrowLink href="#contact">View all</ArrowLink>
-        </div>
-
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {featuredProperties.map((prop) => (
-            <a
-              key={prop.name}
-              href="#contact"
-              className="group flex flex-col no-underline rounded-sm transition-opacity duration-200 hover:opacity-90 active:opacity-80"
-            >
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Tag>StratNovo Venture</Tag>
+              </div>
               <div
-                className="overflow-hidden mb-4 relative rounded-sm"
-                style={{ backgroundColor: "#D5C9B7", aspectRatio: "4/3" }}
+                className="font-serif text-xl mb-1"
+                style={{ color: "#171716" }}
               >
-                <img
-                  src={prop.img}
-                  alt={prop.name}
-                  width={480}
-                  height={360}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-3 right-3">
-                  <span
-                    className="font-sans text-[10px] font-medium tracking-[0.1em] uppercase px-2 py-1"
-                    style={{
-                      backgroundColor: "#F7F5EF",
-                      color:
-                        prop.status === "Available" ? "#171716" : "#68655E",
-                    }}
-                  >
-                    {prop.status}
-                  </span>
-                </div>
+                Rumia
               </div>
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <div
-                    className="font-sans text-sm font-medium mb-0.5"
-                    style={{ color: "#171716" }}
-                  >
-                    {prop.name}
-                  </div>
-                  <div
-                    className="font-sans text-xs"
-                    style={{ color: "#9B968D" }}
-                  >
-                    {prop.location} · {prop.type}
-                  </div>
-                </div>
-                <span
-                  aria-hidden="true"
-                  className="font-sans text-xs transition-transform duration-200 group-hover:translate-x-1 mt-1 flex-shrink-0"
-                  style={{ color: "#68655E" }}
-                >
-                  →
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        {/* Rumia connection */}
-        <div
-          className="mt-10 sm:mt-12 p-6 sm:p-8 border border-[#D9D4C9] flex flex-col md:flex-row items-start md:items-center justify-between gap-5 sm:gap-6 rounded-sm"
-          style={{ backgroundColor: "#E8E0D2" }}
-        >
-          <div>
-            <div className="mb-2">
-              <Tag>StratNovo Venture</Tag>
+              <p
+                className="font-sans text-sm"
+                style={{ color: "#68655E", fontWeight: 300 }}
+              >
+                Our accommodation and property discovery platform. Find,
+                compare, and connect with properties through Rumia.
+              </p>
             </div>
-            <div
-              className="font-serif text-xl mb-1"
-              style={{ color: "#171716" }}
-            >
-              Rumia
-            </div>
-            <p
-              className="font-sans text-sm max-w-md"
-              style={{ color: "#68655E", fontWeight: 300 }}
-            >
-              Our accommodation and property discovery platform. Find,
-              compare, and connect with properties through Rumia.
-            </p>
+            <ArrowLink href="#products">Explore Rumia</ArrowLink>
           </div>
-          <ArrowLink href="#products" className="flex-shrink-0">
-            Explore Rumia
-          </ArrowLink>
         </div>
-      </div>
-    </Section>
+      </Container>
+    </section>
   )
 }
