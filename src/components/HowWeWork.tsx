@@ -16,8 +16,8 @@ const steps = [
     name: "Shape",
     description: (
       <>
-        We define the product, system, campaign, or service — what it is, what
-        it does, and <Highlight>how it should work</Highlight>.
+        We define the product, system, campaign, or service: what it is, what it
+        does, and <Highlight>how it should work</Highlight>.
       </>
     ),
   },
@@ -46,7 +46,7 @@ const steps = [
     name: "Launch",
     description: (
       <>
-        We release, monitor, and support — and continue improving based on{" "}
+        We release, monitor, and support, then continue improving based on{" "}
         <Highlight>real feedback and data</Highlight>.
       </>
     ),
@@ -79,7 +79,8 @@ export default function HowWeWork() {
                 letterSpacing: "-0.02em",
               }}
             >
-              A disciplined process that works across everything we do.
+              A <Highlight>disciplined process</Highlight> that works across
+              everything we do.
             </h2>
           </div>
           <div className="lg:col-span-7 lg:flex lg:items-end">
@@ -89,7 +90,7 @@ export default function HowWeWork() {
             >
               Whether we are building software products, planning digital
               marketing systems, delivering training experiences, or managing
-              property services — the same{" "}
+              property services, the same{" "}
               <Highlight>disciplined, practical approach</Highlight> applies.
             </p>
           </div>

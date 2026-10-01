@@ -93,7 +93,8 @@ export default function RealEstate() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Better ways to find, manage, and experience property.
+              Better ways to{" "}
+              <Highlight>find, manage, and experience property</Highlight>.
             </h2>
             <p
               className="font-sans text-base leading-relaxed mb-4"
@@ -101,7 +102,7 @@ export default function RealEstate() {
             >
               StratNovo manages and lists properties, supports property owners,
               and helps people <Highlight>find the right spaces</Highlight>. Our
-              property services are connected to <Highlight>Rumia</Highlight> —
+              property services are connected to <Highlight>Rumia</Highlight>,
               our accommodation and property discovery platform.
             </p>
             <ArrowLink href="#contact">Explore listings</ArrowLink>

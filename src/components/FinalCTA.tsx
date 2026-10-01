@@ -31,7 +31,9 @@ export default function FinalCTA() {
             >
               Have an idea worth building?
               <br />
-              <em>Let us build it.</em>
+              <em>
+                <Highlight>Let us build it.</Highlight>
+              </em>
             </h2>
             <p
               className="font-sans text-base leading-relaxed mb-10"
@@ -43,7 +45,7 @@ export default function FinalCTA() {
               }}
             >
               Whether you need software, a growth system, digital training, or
-              property support —{" "}
+              property support,{" "}
               <Highlight>the first step is a conversation</Highlight>. Send us a
               message and we will reply personally.
             </p>

@@ -57,7 +57,7 @@ const projects = [
     description: (
       <>
         A comprehensive digital marketing system built for a growth-stage
-        business — strategy, content, search, and reporting{" "}
+        business, unifying strategy, content, search, and reporting{" "}
         <Highlight>unified into a single operation</Highlight>.
       </>
     ),
@@ -73,7 +73,7 @@ const projects = [
     description: (
       <>
         A property technology platform focused on{" "}
-        <Highlight>rental discovery</Highlight> — connecting prospective tenants
+        <Highlight>rental discovery</Highlight>, connecting prospective tenants
         with available spaces and giving property owners a structured way to
         present listings and receive leads.
       </>
@@ -90,7 +90,7 @@ const projects = [
     description: (
       <>
         A platform for discovering and connecting with technology communities
-        across <Highlight>Kenya's tech ecosystem</Highlight> — developer groups,
+        across <Highlight>Kenya's tech ecosystem</Highlight>: developer groups,
         campus tech clubs, events and organizations in one place.
       </>
     ),
@@ -105,7 +105,7 @@ const projects = [
     category: "Brand & Digital Experience",
     description: (
       <>
-        A polished digital presence for an aviation-oriented brand — editorial,
+        A polished digital presence for an aviation-oriented brand. Editorial,
         premium, and personal. Designed to communicate{" "}
         <Highlight>aviation, identity, and story</Highlight>.
       </>
@@ -197,7 +197,7 @@ export default function SelectedWork() {
             >
               Products, systems,
               <br />
-              and ventures we have built.
+              and ventures <Highlight>we have built</Highlight>.
             </h2>
           </div>
         </div>

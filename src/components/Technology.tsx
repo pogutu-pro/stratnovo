@@ -81,7 +81,7 @@ export default function Technology() {
                 letterSpacing: "-0.02em",
               }}
             >
-              The right tool for the right problem.
+              The <Highlight>right tool for the right problem</Highlight>.
             </h2>
             <p
               className="font-sans text-base leading-relaxed"
@@ -97,7 +97,7 @@ export default function Technology() {
                 practical, reliable, and maintainable software
               </Highlight>
               . We select technologies based on the problem, the team, and the
-              long-term product — <Highlight>not on trends</Highlight>.
+              long-term product, <Highlight>not on trends</Highlight>.
             </p>
           </div>
           <div className="lg:col-span-7">

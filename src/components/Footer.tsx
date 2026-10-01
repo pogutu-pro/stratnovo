@@ -106,7 +106,7 @@ export default function Footer() {
               className="font-sans text-sm leading-relaxed"
               style={{ color: "#9B968D", fontWeight: 300, maxWidth: "320px" }}
             >
-              Software, growth, learning, and property —{" "}
+              Software, growth, learning, and property.{" "}
               <Highlight>one company, four connected areas</Highlight>.
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${social.label} — ${social.handle}`}
+                    aria-label={`${social.label}, ${social.handle}`}
                     className="group inline-flex items-center gap-3 font-sans text-sm transition-colors duration-150"
                     style={{ color: "#BFB8AC" }}
                     onMouseEnter={(e) => {
@@ -223,7 +223,7 @@ export default function Footer() {
             © {new Date().getFullYear()} StratNovo. All rights reserved.
           </span>
           <span className="font-sans text-xs" style={{ color: "#68655E" }}>
-            StratNovo — Build. Grow. Learn. Live.
+            StratNovo. Build. Grow. Learn. Live.
           </span>
         </div>
       </Container>

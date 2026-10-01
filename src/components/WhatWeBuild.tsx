@@ -109,7 +109,7 @@ export default function WhatWeBuild() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Software development is a core capability.
+              Software development is a <Highlight>core capability</Highlight>.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:flex lg:items-end">

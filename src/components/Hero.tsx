@@ -203,8 +203,8 @@ export default function Hero() {
             <br />
             moves businesses
             <br />
-            <em className="italic" style={{ color: "#68655E" }}>
-              forward.
+            <em className="italic">
+              <Highlight>forward.</Highlight>
             </em>
           </h1>
 
@@ -303,8 +303,8 @@ export default function Hero() {
             <br />
             moves businesses
             <br />
-            <em className="italic" style={{ color: "#68655E" }}>
-              forward.
+            <em className="italic">
+              <Highlight>forward.</Highlight>
             </em>
           </h1>
 

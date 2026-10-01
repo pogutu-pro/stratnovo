@@ -122,7 +122,9 @@ export default function DigitalMarketing() {
             >
               Growth is not noise.
               <br />
-              <em>It is a system.</em>
+              <em>
+                <Highlight>It is a system.</Highlight>
+              </em>
             </h2>
             <p
               className="font-sans text-base leading-relaxed mb-8"

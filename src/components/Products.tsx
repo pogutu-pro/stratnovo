@@ -9,7 +9,7 @@ const products = [
     description: (
       <>
         Better living and accommodation discovery. Rumia helps people{" "}
-        <Highlight>find the right spaces</Highlight> — connecting renters,
+        <Highlight>find the right spaces</Highlight>, connecting renters,
         buyers, and guests with properties that match how they want to live.
       </>
     ),
@@ -24,7 +24,7 @@ const products = [
     description: (
       <>
         The core learning infrastructure. A serious software platform for{" "}
-        <Highlight>structured digital education</Highlight> — courses, learning
+        <Highlight>structured digital education</Highlight>: courses, learning
         paths, assessments, live lessons, progress tracking, and instructor
         tools.
       </>
@@ -55,7 +55,7 @@ const products = [
     description: (
       <>
         A property technology product focused on{" "}
-        <Highlight>rental discovery</Highlight> — connecting prospective tenants
+        <Highlight>rental discovery</Highlight>, connecting prospective tenants
         with available spaces and giving property owners a structured platform
         to present listings and receive leads.
       </>
@@ -70,7 +70,7 @@ const products = [
     category: "Social Media Management",
     description: (
       <>
-        Social media management, publishing, and digital content workflows —
+        Social media management, publishing, and digital content workflows,
         built to help teams and businesses manage their{" "}
         <Highlight>digital presence with consistency and clarity</Highlight>.
       </>
@@ -132,7 +132,7 @@ export default function Products() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Things we build and operate ourselves.
+              Things <Highlight>we build and operate</Highlight> ourselves.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:flex lg:items-end">

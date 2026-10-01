@@ -30,7 +30,8 @@ export default function Positioning() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Technology, growth, learning, and places — built with intent.
+              Technology, growth, learning, and places.{" "}
+              <Highlight>Built with intent.</Highlight>
             </h2>
           </div>
 
@@ -54,7 +55,7 @@ export default function Positioning() {
             >
               We do not only build for clients. We also build, operate, and
               improve our own products, platforms, learning experiences, and
-              property services — which means we understand what it takes to{" "}
+              property services, which means we understand what it takes to{" "}
               <Highlight>move from idea to working system</Highlight>.
             </p>
             <Divider />

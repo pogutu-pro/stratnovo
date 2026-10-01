@@ -9,7 +9,7 @@ const areas = [
       <>
         Software products, web platforms, automation systems, AI integrations,
         and custom technology. Includes ValidBridge LMS, Rumia, ValidPost,
-        ValidTeam, and bespoke digital systems —{" "}
+        ValidTeam, and bespoke digital systems,
         <Highlight>engineered to work reliably and scale</Highlight>.
       </>
     ),
@@ -37,7 +37,7 @@ const areas = [
       <>
         The education and training experience built on ValidBridge LMS.{" "}
         <Highlight>Practical courses</Highlight>, digital skills, business
-        capabilities, and career development — delivered through StratNovo's own
+        capabilities, and career development, delivered through StratNovo's own
         learning infrastructure.
       </>
     ),
@@ -112,7 +112,7 @@ export default function BusinessAreas() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  {area.name}
+                  <Highlight>{area.name}</Highlight>
                 </h3>
               </div>
 

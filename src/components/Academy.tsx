@@ -80,7 +80,9 @@ export default function Academy() {
             >
               Learn skills that
               <br />
-              <em>create movement.</em>
+              <em>
+                <Highlight>create movement.</Highlight>
+              </em>
             </h2>
             <p
               className="font-sans text-base leading-relaxed"
@@ -91,7 +93,7 @@ export default function Academy() {
                 maxWidth: "560px",
               }}
             >
-              ValidBridge Academy is StratNovo's education venture — a practical
+              ValidBridge Academy is StratNovo's education venture: a practical
               learning platform focused on{" "}
               <Highlight>technology-driven training</Highlight>, digital skills,
               and <Highlight>professional development</Highlight> for
@@ -136,7 +138,7 @@ export default function Academy() {
               style={{ color: "#68655E", fontWeight: 300 }}
             >
               A focused curriculum built around{" "}
-              <Highlight>practical outcomes</Highlight> — not theoretical
+              <Highlight>practical outcomes</Highlight>, not theoretical
               checkboxes. ValidBridge Academy is designed to develop skills that
               transfer directly into{" "}
               <Highlight>real-world roles and ventures</Highlight>.

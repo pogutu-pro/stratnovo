@@ -25,9 +25,11 @@ export default function DarkStatement() {
               letterSpacing: "-0.02em",
             }}
           >
-            We measure value by outcomes —
+            We measure value by outcomes.
             <br />
-            <em>not by work performed.</em>
+            <em>
+              <Highlight>Not by work performed.</Highlight>
+            </em>
           </h2>
           <p
             className="font-sans text-base leading-relaxed mb-10 mx-auto"
@@ -38,8 +40,8 @@ export default function DarkStatement() {
               maxWidth: "560px",
             }}
           >
-            Every engagement — whether a product, a campaign, a learning
-            program, or a property service — is judged by whether it{" "}
+            Every engagement, whether a product, a campaign, a learning program,
+            or a property service, is judged by whether it{" "}
             <Highlight>moved something real</Highlight> for the people it was
             built for. That is the standard we hold ourselves to.
           </p>
