@@ -51,6 +51,44 @@ body {
   color: #F7F5EF;
 }
 
+/*
+  Powered-by logo drift. Transform-only so it stays on the compositor and never
+  triggers layout. `--drift-x` / `--drift-y` are set per logo in PoweredBy.tsx so
+  one keyframe set drives the whole row; the 50% stop sends each mark out and
+  back on its own vector instead of bobbing in unison.
+*/
+@keyframes logoDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(var(--drift-x, 0px), var(--drift-y, 6px), 0);
+  }
+}
+
+.ecosystem-logo {
+  animation: logoDrift var(--drift-duration, 7s) ease-in-out infinite;
+  animation-delay: var(--drift-delay, 0s);
+  will-change: transform;
+}
+
+/*
+  IntersectionObserver adds `is-paused` when the row scrolls out of view, which
+  halts the infinite animations on off-screen logos. The class is toggled
+  directly on the DOM node, so React state and re-renders are never involved.
+*/
+.is-paused .ecosystem-logo {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem-logo {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
