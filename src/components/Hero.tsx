@@ -245,7 +245,7 @@ export default function Hero() {
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "13px",
                 fontWeight: 400,
-                color: "#68655E",
+                color: "var(--color-orange-primary)",
               }}
             >
               Explore our work
@@ -356,7 +356,7 @@ export default function Hero() {
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "13px",
                 fontWeight: 400,
-                color: "#171716",
+                color: "var(--color-orange-primary)",
               }}
             >
               Explore our work
