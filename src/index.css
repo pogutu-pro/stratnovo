@@ -50,40 +50,52 @@ body {
   background: #171716;
   color: #F7F5EF;
 }
-
 /*
-  Powered-by logo drift. Transform-only so it stays on the compositor and never
-  triggers layout. `--drift-x` / `--drift-y` are set per logo in PoweredBy.tsx so
-  one keyframe set drives the whole row; the 50% stop sends each mark out and
-  back on its own vector instead of bobbing in unison.
+  Powered-by logo marquee. The track holds two identical logo sets side by
+  side, so animating it from -50% to 0 travels the logos left-to-right by
+  exactly one set width and loops seamlessly with no visible jump.
+  Transform-only and linear, so it stays on the compositor and never
+  triggers layout.
 */
-@keyframes logoDrift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
+@keyframes logoMarquee {
+  from {
+    transform: translate3d(-50%, 0, 0);
   }
-  50% {
-    transform: translate3d(var(--drift-x, 0px), var(--drift-y, 6px), 0);
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.ecosystem-logo {
-  animation: logoDrift var(--drift-duration, 7s) ease-in-out infinite;
-  animation-delay: var(--drift-delay, 0s);
+.logo-viewport {
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logoMarquee var(--marquee-duration, 34s) linear infinite;
   will-change: transform;
 }
 
+.logo-set {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: none;
+}
+
 /*
-  IntersectionObserver adds `is-paused` when the row scrolls out of view, which
-  halts the infinite animations on off-screen logos. The class is toggled
-  directly on the DOM node, so React state and re-renders are never involved.
+  IntersectionObserver adds `is-paused` when the row scrolls out of view,
+  halting the marquee off-screen. Toggled directly on the DOM node, so React
+  state and re-renders are never involved.
 */
-.is-paused .ecosystem-logo {
+.is-paused .logo-track {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ecosystem-logo {
+  .logo-track {
     animation: none;
     will-change: auto;
   }
