@@ -1,4 +1,4 @@
-import { Container } from "./ui"
+import { Container, Highlight } from "./ui"
 
 export default function FinalCTA() {
   return (
@@ -43,7 +43,8 @@ export default function FinalCTA() {
               }}
             >
               Whether you need software, a growth system, digital training, or
-              property support — the first step is a conversation. Send us a
+              property support —{" "}
+              <Highlight>the first step is a conversation</Highlight>. Send us a
               message and we will reply personally.
             </p>
             <a

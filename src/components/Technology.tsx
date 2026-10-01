@@ -1,4 +1,4 @@
-import { Container } from "./ui"
+import { Container, Highlight } from "./ui"
 
 const stacks = [
   {
@@ -92,9 +92,12 @@ export default function Technology() {
                 maxWidth: "480px",
               }}
             >
-              Our technology work focuses on practical, reliable, and
-              maintainable software. We select technologies based on the
-              problem, the team, and the long-term product — not on trends.
+              Our technology work focuses on{" "}
+              <Highlight>
+                practical, reliable, and maintainable software
+              </Highlight>
+              . We select technologies based on the problem, the team, and the
+              long-term product — <Highlight>not on trends</Highlight>.
             </p>
           </div>
           <div className="lg:col-span-7">

@@ -1,53 +1,85 @@
-import { Container } from "./ui"
+import { Container, Highlight } from "./ui"
 
 const capabilities = [
   {
     num: "01",
     name: "Software Products",
-    description:
-      "Full-featured applications and products built to last and evolve.",
+    description: (
+      <>
+        Full-featured applications and products built to{" "}
+        <Highlight>last and evolve</Highlight>.
+      </>
+    ),
   },
   {
     num: "02",
     name: "Web Platforms",
-    description:
-      "Performant, scalable web applications and digital experiences.",
+    description: (
+      <>
+        <Highlight>Performant, scalable</Highlight> web applications and digital
+        experiences.
+      </>
+    ),
   },
   {
     num: "03",
     name: "Automation Systems",
-    description:
-      "Workflows and systems that remove repetitive work and increase reliability.",
+    description: (
+      <>
+        Workflows and systems that remove repetitive work and{" "}
+        <Highlight>increase reliability</Highlight>.
+      </>
+    ),
   },
   {
     num: "04",
     name: "AI Integrations",
-    description:
-      "Practical, purposeful AI features embedded within useful products.",
+    description: (
+      <>
+        Practical, purposeful AI features embedded within{" "}
+        <Highlight>useful products</Highlight>.
+      </>
+    ),
   },
   {
     num: "05",
     name: "Digital Infrastructure",
-    description:
-      "Cloud architecture, deployment pipelines, and operational systems.",
+    description: (
+      <>
+        <Highlight>Cloud architecture</Highlight>, deployment pipelines, and
+        operational systems.
+      </>
+    ),
   },
   {
     num: "06",
     name: "Data Systems",
-    description:
-      "Data pipelines, storage, analytics, and reporting that inform decisions.",
+    description: (
+      <>
+        Data pipelines, storage, analytics, and reporting that{" "}
+        <Highlight>inform decisions</Highlight>.
+      </>
+    ),
   },
   {
     num: "07",
     name: "Custom Technology",
-    description:
-      "Bespoke solutions built around specific business problems and contexts.",
+    description: (
+      <>
+        Bespoke solutions built around{" "}
+        <Highlight>specific business problems</Highlight> and contexts.
+      </>
+    ),
   },
   {
     num: "08",
     name: "Internal Tools",
-    description:
-      "Operational software that makes teams faster and more effective.",
+    description: (
+      <>
+        Operational software that makes teams{" "}
+        <Highlight>faster and more effective</Highlight>.
+      </>
+    ),
   },
 ]
 
@@ -87,9 +119,9 @@ export default function WhatWeBuild() {
             >
               StratNovo moves from understanding a problem, to shaping a product
               or system, to designing the experience, to building the
-              technology, to launching and improving it. The same end-to-end
-              capability that we use for our own ventures is available for
-              client projects.
+              technology, to <Highlight>launching and improving it</Highlight>.
+              The same <Highlight>end-to-end capability</Highlight> that we use
+              for our own ventures is available for client projects.
             </p>
           </div>
         </div>

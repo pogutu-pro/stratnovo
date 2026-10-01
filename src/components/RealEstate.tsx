@@ -1,25 +1,41 @@
-import { Container, ArrowLink, Tag } from "./ui"
+import { Container, ArrowLink, Tag, Highlight } from "./ui"
 
 const services = [
   {
     label: "Property Management",
-    description:
-      "End-to-end management of residential and commercial properties, keeping them well-run and owners informed.",
+    description: (
+      <>
+        <Highlight>End-to-end management</Highlight> of residential and
+        commercial properties, keeping them well-run and owners informed.
+      </>
+    ),
   },
   {
     label: "Property Listings",
-    description:
-      "Clear, well-presented listings that help owners connect with the right renters, buyers, or guests.",
+    description: (
+      <>
+        Clear, well-presented listings that help owners connect with the{" "}
+        <Highlight>right renters, buyers, or guests</Highlight>.
+      </>
+    ),
   },
   {
     label: "Accommodation Discovery",
-    description:
-      "Helping renters, buyers, and guests find spaces that fit their needs, lifestyle, and budget.",
+    description: (
+      <>
+        Helping renters, buyers, and guests find spaces that fit their{" "}
+        <Highlight>needs, lifestyle, and budget</Highlight>.
+      </>
+    ),
   },
   {
     label: "Owner Services",
-    description:
-      "Support, systems, and visibility for property owners who want their assets well-managed and well-presented.",
+    description: (
+      <>
+        Support, systems, and visibility for property owners who want their
+        assets <Highlight>well-managed and well-presented</Highlight>.
+      </>
+    ),
   },
 ]
 
@@ -84,9 +100,9 @@ export default function RealEstate() {
               style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
             >
               StratNovo manages and lists properties, supports property owners,
-              and helps people find the right spaces. Our property services are
-              connected to Rumia — our accommodation and property discovery
-              platform.
+              and helps people <Highlight>find the right spaces</Highlight>. Our
+              property services are connected to <Highlight>Rumia</Highlight> —
+              our accommodation and property discovery platform.
             </p>
             <ArrowLink href="#contact">Explore listings</ArrowLink>
           </div>
@@ -200,8 +216,9 @@ export default function RealEstate() {
                 className="font-sans text-sm"
                 style={{ color: "#68655E", fontWeight: 300 }}
               >
-                Our accommodation and property discovery platform. Find,
-                compare, and connect with properties through Rumia.
+                Our accommodation and property discovery platform.
+                <Highlight>Find, compare, and connect</Highlight> with
+                properties through Rumia.
               </p>
             </div>
             <ArrowLink href="#products">Explore Rumia</ArrowLink>

@@ -1,4 +1,4 @@
-import { Container } from "./ui"
+import { Container, Highlight } from "./ui"
 
 const links = [
   {
@@ -106,8 +106,8 @@ export default function Footer() {
               className="font-sans text-sm leading-relaxed"
               style={{ color: "#9B968D", fontWeight: 300, maxWidth: "320px" }}
             >
-              Software, growth, learning, and property — one company, four
-              connected areas.
+              Software, growth, learning, and property —{" "}
+              <Highlight>one company, four connected areas</Highlight>.
             </p>
           </div>
 

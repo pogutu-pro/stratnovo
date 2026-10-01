@@ -1,5 +1,16 @@
 import { ReactNode } from "react"
 
+/**
+ * Neon brand-orange emphasis for key words and phrases inside body copy.
+ * Uses the `--color-orange-primary` theme token so it stays in sync with
+ * the rest of the design system.
+ */
+export function Highlight({ children }: { children: ReactNode }) {
+  return (
+    <span style={{ color: "var(--color-orange-primary)" }}>{children}</span>
+  )
+}
+
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <span

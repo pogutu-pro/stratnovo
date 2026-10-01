@@ -1,30 +1,50 @@
-import { Container, ArrowLink, Tag } from "./ui"
+import { Container, ArrowLink, Tag, Highlight } from "./ui"
 
 const learningAreas = [
   {
     area: "Digital Skills",
-    description:
-      "Practical tools, platforms, and digital fluency for the modern workplace.",
+    description: (
+      <>
+        Practical tools, platforms, and <Highlight>digital fluency</Highlight>{" "}
+        for the modern workplace.
+      </>
+    ),
   },
   {
     area: "Technology",
-    description:
-      "Programming, systems thinking, software fundamentals, and applied tech.",
+    description: (
+      <>
+        Programming, systems thinking, software fundamentals, and{" "}
+        <Highlight>applied tech</Highlight>.
+      </>
+    ),
   },
   {
     area: "Business & Entrepreneurship",
-    description:
-      "Building, running, and growing organizations with practical frameworks.",
+    description: (
+      <>
+        Building, running, and growing organizations with{" "}
+        <Highlight>practical frameworks</Highlight>.
+      </>
+    ),
   },
   {
     area: "Productivity",
-    description:
-      "Systems, tools, and habits for personal and team effectiveness.",
+    description: (
+      <>
+        Systems, tools, and habits for{" "}
+        <Highlight>personal and team effectiveness</Highlight>.
+      </>
+    ),
   },
   {
     area: "Professional Development",
-    description:
-      "Communication, leadership, and skills for career advancement.",
+    description: (
+      <>
+        Communication, leadership, and skills for{" "}
+        <Highlight>career advancement</Highlight>.
+      </>
+    ),
   },
 ]
 
@@ -72,9 +92,10 @@ export default function Academy() {
               }}
             >
               ValidBridge Academy is StratNovo's education venture — a practical
-              learning platform focused on technology-driven training, digital
-              skills, and professional development for individuals and teams
-              ready to grow.
+              learning platform focused on{" "}
+              <Highlight>technology-driven training</Highlight>, digital skills,
+              and <Highlight>professional development</Highlight> for
+              individuals and teams ready to grow.
             </p>
           </div>
           <div className="lg:col-span-5 flex items-end justify-end">
@@ -114,9 +135,11 @@ export default function Academy() {
               className="font-sans text-sm leading-relaxed mb-8"
               style={{ color: "#68655E", fontWeight: 300 }}
             >
-              A focused curriculum built around practical outcomes — not
-              theoretical checkboxes. ValidBridge Academy is designed to develop
-              skills that transfer directly into real-world roles and ventures.
+              A focused curriculum built around{" "}
+              <Highlight>practical outcomes</Highlight> — not theoretical
+              checkboxes. ValidBridge Academy is designed to develop skills that
+              transfer directly into{" "}
+              <Highlight>real-world roles and ventures</Highlight>.
             </p>
             <ArrowLink href="#contact">Explore the academy</ArrowLink>
           </div>

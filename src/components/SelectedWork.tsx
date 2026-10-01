@@ -1,14 +1,19 @@
 import { useState } from "react"
 import type { CSSProperties, ReactNode } from "react"
-import { Container, Tag, ArrowLink } from "./ui"
+import { Container, Tag, ArrowLink, Highlight } from "./ui"
 import rumiaImg from "../assets/marketing_rumia_2k.png"
 
 const projects = [
   {
     name: "Rumia",
     category: "Property Discovery Platform",
-    description:
-      "A property and accommodation discovery platform connecting people with the right spaces. Built end-to-end as a StratNovo venture.",
+    description: (
+      <>
+        A property and accommodation discovery platform connecting people with
+        the right spaces. Built <Highlight>end-to-end</Highlight> as a StratNovo
+        venture.
+      </>
+    ),
     type: "StratNovo Venture",
     year: "2024",
     img: rumiaImg,
@@ -18,8 +23,12 @@ const projects = [
   {
     name: "ValidBridge Academy",
     category: "Learning Platform",
-    description:
-      "A professional training and skills development platform built for practical, technology-focused education.",
+    description: (
+      <>
+        A professional training and skills development platform built for{" "}
+        <Highlight>practical, technology-focused education</Highlight>.
+      </>
+    ),
     type: "StratNovo Venture",
     year: "2024",
     img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&h=600&fit=crop&auto=format",
@@ -29,8 +38,13 @@ const projects = [
   {
     name: "ValidPost",
     category: "Social Media Management",
-    description:
-      "A content publishing and social media management platform for teams and businesses managing their digital presence.",
+    description: (
+      <>
+        A content publishing and social media management platform for teams and
+        businesses managing their <Highlight>digital presence</Highlight> with
+        consistency.
+      </>
+    ),
     type: "StratNovo Product",
     year: "2024",
     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&h=600&fit=crop&auto=format",
@@ -40,8 +54,13 @@ const projects = [
   {
     name: "Digital Growth System",
     category: "Digital Marketing",
-    description:
-      "A comprehensive digital marketing system built for a growth-stage business — strategy, content, search, and reporting unified into a single operational structure.",
+    description: (
+      <>
+        A comprehensive digital marketing system built for a growth-stage
+        business — strategy, content, search, and reporting{" "}
+        <Highlight>unified into a single operation</Highlight>.
+      </>
+    ),
     type: "Client Project",
     year: "2024",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=600&fit=crop&auto=format",
@@ -51,8 +70,14 @@ const projects = [
   {
     name: "RumiaRent",
     category: "Rental Property Technology",
-    description:
-      "A property technology platform focused on rental discovery — connecting prospective tenants with available spaces and giving property owners a structured way to present listings and receive leads.",
+    description: (
+      <>
+        A property technology platform focused on{" "}
+        <Highlight>rental discovery</Highlight> — connecting prospective tenants
+        with available spaces and giving property owners a structured way to
+        present listings and receive leads.
+      </>
+    ),
     type: "StratNovo Product",
     year: "2024",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=600&fit=crop&auto=format",
@@ -62,8 +87,13 @@ const projects = [
   {
     name: "DPrime",
     category: "Technology Community Platform",
-    description:
-      "A platform for discovering and connecting with technology communities across Kenya — developer groups, campus tech clubs, events and organizations in one place.",
+    description: (
+      <>
+        A platform for discovering and connecting with technology communities
+        across <Highlight>Kenya's tech ecosystem</Highlight> — developer groups,
+        campus tech clubs, events and organizations in one place.
+      </>
+    ),
     type: "Client Project",
     year: "2024",
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=600&fit=crop&auto=format",
@@ -73,8 +103,13 @@ const projects = [
   {
     name: "The Flying Decksman",
     category: "Brand & Digital Experience",
-    description:
-      "A polished digital presence for an aviation-oriented brand — editorial, premium, and personal. Designed to communicate aviation, identity, and story.",
+    description: (
+      <>
+        A polished digital presence for an aviation-oriented brand — editorial,
+        premium, and personal. Designed to communicate{" "}
+        <Highlight>aviation, identity, and story</Highlight>.
+      </>
+    ),
     type: "Client Project",
     year: "2024",
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&h=600&fit=crop&auto=format",

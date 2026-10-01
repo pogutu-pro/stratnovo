@@ -1,36 +1,59 @@
-import { Container, Tag, ArrowLink } from "./ui"
+import { Container, Tag, ArrowLink, Highlight } from "./ui"
 
 const areas = [
   {
     num: "01",
     name: "Build",
     category: "Software & Technology",
-    description:
-      "Software products, web platforms, automation systems, AI integrations, and custom technology. Includes ValidBridge LMS, Rumia, ValidPost, ValidTeam, and bespoke digital systems — engineered to work reliably and scale.",
+    description: (
+      <>
+        Software products, web platforms, automation systems, AI integrations,
+        and custom technology. Includes ValidBridge LMS, Rumia, ValidPost,
+        ValidTeam, and bespoke digital systems —{" "}
+        <Highlight>engineered to work reliably and scale</Highlight>.
+      </>
+    ),
     href: "#services",
   },
   {
     num: "02",
     name: "Grow",
     category: "Digital Marketing",
-    description:
-      "Digital marketing, content strategy, social media management, campaign execution, search visibility, brand systems, and performance-focused growth that connects businesses to the audiences that matter.",
+    description: (
+      <>
+        Digital marketing, content strategy, social media management, campaign
+        execution, search visibility, brand systems, and{" "}
+        <Highlight>performance-focused growth</Highlight> that connects
+        businesses to <Highlight>the audiences that matter</Highlight>.
+      </>
+    ),
     href: "#services",
   },
   {
     num: "03",
     name: "Learn",
     category: "ValidBridge Academy",
-    description:
-      "The education and training experience built on ValidBridge LMS. Practical courses, digital skills, business capabilities, and career development — delivered through StratNovo's own learning infrastructure.",
+    description: (
+      <>
+        The education and training experience built on ValidBridge LMS.{" "}
+        <Highlight>Practical courses</Highlight>, digital skills, business
+        capabilities, and career development — delivered through StratNovo's own
+        learning infrastructure.
+      </>
+    ),
     href: "#academy",
   },
   {
     num: "04",
     name: "Live",
     category: "Real Estate & Property",
-    description:
-      "Real estate services including property management, listings, accommodation discovery, and helping people find the right spaces to live, stay, or work.",
+    description: (
+      <>
+        Real estate services including property management, listings,
+        accommodation discovery, and helping people{" "}
+        <Highlight>find the right spaces to live, stay, or work</Highlight>.
+      </>
+    ),
     href: "#properties",
   },
 ]

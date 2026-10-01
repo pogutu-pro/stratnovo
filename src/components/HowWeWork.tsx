@@ -1,35 +1,55 @@
-import { Container } from "./ui"
+import { Container, Highlight } from "./ui"
 
 const steps = [
   {
     num: "01",
     name: "Understand",
-    description:
-      "We begin by understanding the problem, the context, the people involved, and what success looks like.",
+    description: (
+      <>
+        We begin by understanding the problem, the context,{" "}
+        <Highlight>the people involved</Highlight>, and what success looks like.
+      </>
+    ),
   },
   {
     num: "02",
     name: "Shape",
-    description:
-      "We define the product, system, campaign, or service — what it is, what it does, and how it should work.",
+    description: (
+      <>
+        We define the product, system, campaign, or service — what it is, what
+        it does, and <Highlight>how it should work</Highlight>.
+      </>
+    ),
   },
   {
     num: "03",
     name: "Build",
-    description:
-      "We engineer, design, and construct the solution with clarity, rigor, and appropriate craft.",
+    description: (
+      <>
+        We engineer, design, and construct the solution with{" "}
+        <Highlight>clarity, rigor, and craft</Highlight>.
+      </>
+    ),
   },
   {
     num: "04",
     name: "Refine",
-    description:
-      "We test, improve, and sharpen until the output is reliable, coherent, and effective.",
+    description: (
+      <>
+        We test, improve, and sharpen until the output is{" "}
+        <Highlight>reliable and effective</Highlight>.
+      </>
+    ),
   },
   {
     num: "05",
     name: "Launch",
-    description:
-      "We release, monitor, and support — and continue improving based on real feedback and real data.",
+    description: (
+      <>
+        We release, monitor, and support — and continue improving based on{" "}
+        <Highlight>real feedback and data</Highlight>.
+      </>
+    ),
   },
 ]
 
@@ -69,8 +89,8 @@ export default function HowWeWork() {
             >
               Whether we are building software products, planning digital
               marketing systems, delivering training experiences, or managing
-              property services — the same disciplined, practical approach
-              applies.
+              property services — the same{" "}
+              <Highlight>disciplined, practical approach</Highlight> applies.
             </p>
           </div>
         </div>

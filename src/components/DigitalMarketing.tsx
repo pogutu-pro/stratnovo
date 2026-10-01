@@ -1,47 +1,87 @@
 import { useState } from "react"
-import { Container, ArrowLink } from "./ui"
+import { Container, ArrowLink, Highlight } from "./ui"
 
 const services = [
   {
     label: "Digital Strategy",
-    detail:
-      "Planning and positioning for digital growth across channels and platforms.",
+    detail: (
+      <>
+        Planning and positioning for <Highlight>digital growth</Highlight>{" "}
+        across channels and platforms.
+      </>
+    ),
   },
   {
     label: "Social Media Management",
-    detail: "Consistent, purposeful content and community management.",
+    detail: (
+      <>
+        Consistent, purposeful{" "}
+        <Highlight>content and community management</Highlight>.
+      </>
+    ),
   },
   {
     label: "Content Systems",
-    detail:
-      "Structured content production, distribution, and editorial workflows.",
+    detail: (
+      <>
+        Structured content production, distribution, and{" "}
+        <Highlight>editorial workflows</Highlight>.
+      </>
+    ),
   },
   {
     label: "Campaign Planning & Execution",
-    detail: "End-to-end campaign design built around measurable outcomes.",
+    detail: (
+      <>
+        End-to-end campaign design built around{" "}
+        <Highlight>measurable outcomes</Highlight>.
+      </>
+    ),
   },
   {
     label: "Search Visibility",
-    detail:
-      "Technical and editorial improvements that help the right people find you.",
+    detail: (
+      <>
+        Technical and editorial improvements that help{" "}
+        <Highlight>the right people find you</Highlight>.
+      </>
+    ),
   },
   {
     label: "Brand & Communication Systems",
-    detail:
-      "Coherent messaging systems that communicate clearly and consistently.",
+    detail: (
+      <>
+        Coherent messaging systems that communicate{" "}
+        <Highlight>clearly and consistently</Highlight>.
+      </>
+    ),
   },
   {
     label: "Lead Generation",
-    detail: "Systems that attract, qualify, and convert the right audience.",
+    detail: (
+      <>
+        Systems that <Highlight>attract, qualify, and convert</Highlight> the
+        right audience.
+      </>
+    ),
   },
   {
     label: "Analytics & Performance",
-    detail: "Clear reporting, attribution, and improvement cycles.",
+    detail: (
+      <>
+        Clear reporting, attribution, and{" "}
+        <Highlight>improvement cycles</Highlight>.
+      </>
+    ),
   },
   {
     label: "Product & Service Launches",
-    detail:
-      "Launch strategy, content, and execution for new products and services.",
+    detail: (
+      <>
+        Launch strategy, content, and execution for{" "}
+        <Highlight>new products and services</Highlight>.
+      </>
+    ),
   },
 ]
 
@@ -89,9 +129,10 @@ export default function DigitalMarketing() {
               style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
             >
               StratNovo helps businesses communicate clearly, reach the right
-              audiences, and build repeatable digital growth systems. Our work
-              connects strategy, technology, content, and measurement into a
-              single coherent effort.
+              audiences, and build{" "}
+              <Highlight>repeatable digital growth systems</Highlight>. Our work
+              connects strategy, technology, content, and measurement into a{" "}
+              <Highlight>single coherent effort</Highlight>.
             </p>
             <ArrowLink href="#contact">Build a growth system</ArrowLink>
           </div>

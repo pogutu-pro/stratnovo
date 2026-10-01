@@ -1,3 +1,5 @@
+import { Highlight } from "./ui"
+
 const areas = [
   {
     num: "01",
@@ -216,9 +218,9 @@ export default function Hero() {
               color: "#68655E",
             }}
           >
-            We build digital products, software systems, growth experiences,
-            learning platforms, and property solutions for people and businesses
-            ready to move forward.
+            We build <Highlight>digital products</Highlight>, software systems,
+            growth experiences, <Highlight>learning platforms</Highlight>, and
+            property solutions for people and businesses ready to move forward.
           </p>
 
           <div className="flex flex-col gap-3">
@@ -318,9 +320,9 @@ export default function Hero() {
               maxWidth: "520px",
             }}
           >
-            We build digital products, software systems, growth experiences,
-            learning platforms, and property solutions for people and businesses
-            ready to move forward.
+            We build <Highlight>digital products</Highlight>, software systems,
+            growth experiences, <Highlight>learning platforms</Highlight>, and
+            property solutions for people and businesses ready to move forward.
           </p>
 
           {/* Dual CTAs */}

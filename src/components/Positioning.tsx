@@ -1,4 +1,4 @@
-import { Container, Divider } from "./ui"
+import { Container, Divider, Highlight } from "./ui"
 
 export default function Positioning() {
   return (
@@ -40,10 +40,13 @@ export default function Positioning() {
               className="font-sans text-base leading-relaxed mb-6"
               style={{ color: "#2C2B28", fontWeight: 300, fontSize: "17px" }}
             >
-              StratNovo builds digital products and software systems, helps
-              organizations grow through focused digital marketing, delivers
-              practical education through ValidBridge Academy, and manages
-              property experiences through real estate services.
+              StratNovo builds{" "}
+              <Highlight>digital products and software systems</Highlight>,
+              helps organizations grow through{" "}
+              <Highlight>focused digital marketing</Highlight>, delivers{" "}
+              <Highlight>practical education</Highlight> through ValidBridge
+              Academy, and manages <Highlight>property experiences</Highlight>{" "}
+              through real estate services.
             </p>
             <p
               className="font-sans text-base leading-relaxed mb-10"
@@ -51,8 +54,8 @@ export default function Positioning() {
             >
               We do not only build for clients. We also build, operate, and
               improve our own products, platforms, learning experiences, and
-              property services — which means we understand what it takes to
-              move from idea to working system.
+              property services — which means we understand what it takes to{" "}
+              <Highlight>move from idea to working system</Highlight>.
             </p>
             <Divider />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mt-8">

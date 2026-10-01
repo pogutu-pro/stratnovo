@@ -1,13 +1,18 @@
 import { useState } from "react"
-import { Container, Tag } from "./ui"
+import { Container, Tag, Highlight } from "./ui"
 
 const products = [
   {
     num: "01",
     name: "Rumia",
     category: "Property Discovery",
-    description:
-      "Better living and accommodation discovery. Rumia helps people find the right spaces — connecting renters, buyers, and guests with properties that match how they want to live.",
+    description: (
+      <>
+        Better living and accommodation discovery. Rumia helps people{" "}
+        <Highlight>find the right spaces</Highlight> — connecting renters,
+        buyers, and guests with properties that match how they want to live.
+      </>
+    ),
     status: "Active",
     type: "StratNovo Venture",
     url: "https://rumia.co.ke",
@@ -16,8 +21,14 @@ const products = [
     num: "02",
     name: "ValidBridge LMS",
     category: "Learning Technology",
-    description:
-      "The core learning infrastructure. A serious software platform for structured digital education — courses, learning paths, assessments, live lessons, progress tracking, and instructor tools.",
+    description: (
+      <>
+        The core learning infrastructure. A serious software platform for{" "}
+        <Highlight>structured digital education</Highlight> — courses, learning
+        paths, assessments, live lessons, progress tracking, and instructor
+        tools.
+      </>
+    ),
     status: "Active",
     type: "StratNovo Platform",
     url: "https://validbridge.co.ke",
@@ -26,8 +37,13 @@ const products = [
     num: "03",
     name: "ValidBridge Academy",
     category: "Professional Training",
-    description:
-      "The education and training experience powered by ValidBridge LMS. Practical, skills-focused learning for individuals and teams in digital, technology, and business fields.",
+    description: (
+      <>
+        The education and training experience powered by ValidBridge LMS.{" "}
+        <Highlight>Practical, skills-focused learning</Highlight> for
+        individuals and teams in digital, technology, and business fields.
+      </>
+    ),
     status: "Active",
     type: "StratNovo Venture",
     url: "https://validbridge.co.ke",
@@ -36,8 +52,14 @@ const products = [
     num: "04",
     name: "RumiaRent",
     category: "Rental Property Technology",
-    description:
-      "A property technology product focused on rental discovery — connecting prospective tenants with available spaces and giving property owners a structured platform to present listings and receive leads.",
+    description: (
+      <>
+        A property technology product focused on{" "}
+        <Highlight>rental discovery</Highlight> — connecting prospective tenants
+        with available spaces and giving property owners a structured platform
+        to present listings and receive leads.
+      </>
+    ),
     status: "Active",
     type: "StratNovo Product",
     url: "https://rumiarent.com",
@@ -46,8 +68,13 @@ const products = [
     num: "06",
     name: "ValidPost",
     category: "Social Media Management",
-    description:
-      "Social media management, publishing, and digital content workflows — built to help teams and businesses manage their digital presence with consistency and clarity.",
+    description: (
+      <>
+        Social media management, publishing, and digital content workflows —
+        built to help teams and businesses manage their{" "}
+        <Highlight>digital presence with consistency and clarity</Highlight>.
+      </>
+    ),
     status: "Active",
     type: "StratNovo Product",
     url: "https://validpost.co.ke",
@@ -56,8 +83,15 @@ const products = [
     num: "07",
     name: "ValidTeam",
     category: "Collaborative Work",
-    description:
-      "Collaborative work and productivity tools designed to help teams coordinate, communicate, and move projects forward with less friction.",
+    description: (
+      <>
+        Collaborative work and productivity tools designed to help teams{" "}
+        <Highlight>
+          coordinate, communicate, and move projects forward
+        </Highlight>{" "}
+        with less friction.
+      </>
+    ),
     status: "In Development",
     type: "StratNovo Product",
     url: "https://rumiamanage.com",
@@ -106,9 +140,13 @@ export default function Products() {
               className="font-sans text-base leading-relaxed"
               style={{ color: "#68655E", fontWeight: 300, fontSize: "16px" }}
             >
-              StratNovo is both a technology partner for clients and a builder
-              and operator of its own products and ventures. These are some of
-              what we have built, launched, and continue to improve.
+              StratNovo is both a{" "}
+              <Highlight>technology partner for clients</Highlight> and a{" "}
+              <Highlight>
+                builder and operator of its own products and ventures
+              </Highlight>
+              . These are some of what we have built, launched, and continue to
+              improve.
             </p>
           </div>
         </div>

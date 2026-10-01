@@ -1,4 +1,4 @@
-import { Container, ArrowLink } from "./ui"
+import { Container, ArrowLink, Highlight } from "./ui"
 
 export default function DarkStatement() {
   return (
@@ -39,9 +39,9 @@ export default function DarkStatement() {
             }}
           >
             Every engagement — whether a product, a campaign, a learning
-            program, or a property service — is judged by whether it moved
-            something real for the people it was built for. That is the standard
-            we hold ourselves to.
+            program, or a property service — is judged by whether it{" "}
+            <Highlight>moved something real</Highlight> for the people it was
+            built for. That is the standard we hold ourselves to.
           </p>
           <div className="flex justify-center">
             <ArrowLink href="#contact" dark>
