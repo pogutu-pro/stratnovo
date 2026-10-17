@@ -118,7 +118,7 @@ const projects = [
     year: "2024",
     img: flyingDecksmanImg,
     tags: ["Brand Website", "Digital Experience", "Editorial Design"],
-    url: "https://theflyicngdecksman.com",
+    url: "https://theflyingdecksman.com",
   },
 ]
 
