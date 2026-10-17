@@ -2,6 +2,9 @@ import { useState } from "react"
 import type { CSSProperties, ReactNode } from "react"
 import { Container, Tag, ArrowLink, Highlight } from "./ui"
 import rumiaImg from "../assets/marketing_rumia_2k.png"
+import rumiarentImg from "../assets/rumiarent.png"
+import dprimeImg from "../assets/dprime.png"
+import flyingDecksmanImg from "../assets/flyingdecksman.png"
 
 const projects = [
   {
@@ -80,7 +83,7 @@ const projects = [
     ),
     type: "StratNovo Product",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=600&fit=crop&auto=format",
+    img: rumiarentImg,
     tags: ["PropTech", "Product Engineering", "Rental Discovery"],
     url: "https://rumiarent.com",
   },
@@ -97,7 +100,7 @@ const projects = [
     ),
     type: "Developed by StratNovo",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=600&fit=crop&auto=format",
+    img: dprimeImg,
     tags: ["Community Platform", "Product Design", "Engineering"],
     url: "https://dprime.co.ke",
   },
@@ -113,7 +116,7 @@ const projects = [
     ),
     type: "Client Project",
     year: "2024",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&h=600&fit=crop&auto=format",
+    img: flyingDecksmanImg,
     tags: ["Brand Website", "Digital Experience", "Editorial Design"],
     url: "https://theflyicngdecksman.com",
   },
