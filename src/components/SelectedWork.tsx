@@ -91,10 +91,11 @@ const projects = [
       <>
         A platform for discovering and connecting with technology communities
         across <Highlight>Kenya's tech ecosystem</Highlight>: developer groups,
-        campus tech clubs, events and organizations in one place.
+        campus tech clubs, events and organizations in one place. Built
+        end-to-end by StratNovo.
       </>
     ),
-    type: "Client Project",
+    type: "Developed by StratNovo",
     year: "2024",
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=600&fit=crop&auto=format",
     tags: ["Community Platform", "Product Design", "Engineering"],

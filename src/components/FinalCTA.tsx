@@ -50,11 +50,11 @@ export default function FinalCTA() {
               message and we will reply personally.
             </p>
             <a
-              href="mailto:hello@stratnovo.com"
+              href="mailto:info@stratnovo.co.ke"
               className="font-sans text-sm font-medium"
               style={{ color: "#171716" }}
             >
-              hello@stratnovo.com →
+              info@stratnovo.co.ke →
             </a>
           </div>
 
